@@ -3,14 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --gold: #D4AF37;
-  --gold-light: #E8CC5A;
-  --gold-dark: #B8941F;
-  --cream: #F5F0E8;
-  --cream-muted: #C8B89A;
-  --dark: #0A0A0A;
-  --dark-card: #111111;
-  --dark-border: #1A1A1A;
+  --coral: #E8919A;
+  --coral-soft: #F5C8C8;
+  --coral-deep: #D46A75;
+  --olive: #3F5E3F;
+  --olive-muted: #7A8A7A;
+  --ivory: #FAF3EA;
+  --ivory-card: #FFFFFF;
+  --rose-border: #F2D6D6;
+
+  /* aliases kept so legacy class tokens map to new palette */
+  --gold: #E8919A;
+  --gold-light: #F5C8C8;
+  --gold-dark: #3F5E3F;
+  --cream: #3F5E3F;
+  --cream-muted: #7A8A7A;
+  --dark: #FAF3EA;
+  --dark-card: #FFFFFF;
+  --dark-border: #F2D6D6;
 }
 
 * {
@@ -22,51 +32,55 @@ html {
 }
 
 body {
-  background-color: #0A0A0A;
-  color: #F5F0E8;
+  background-color: var(--ivory);
+  color: var(--olive);
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-playfair), Georgia, serif;
+  color: var(--olive);
 }
 
-/* Gold scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #111111;
+  background: var(--ivory);
 }
 ::-webkit-scrollbar-thumb {
-  background: #D4AF37;
+  background: var(--coral);
   border-radius: 3px;
 }
 
-/* Gold selection */
 ::selection {
-  background: #D4AF37;
-  color: #0A0A0A;
+  background: var(--coral);
+  color: #FFFFFF;
 }
 
 @layer components {
   .btn-gold {
-    @apply bg-gold text-[#0A0A0A] font-semibold px-6 py-3 rounded-sm hover:bg-gold-light transition-all duration-200 hover:scale-105 active:scale-95 inline-flex items-center gap-2;
+    @apply bg-coral text-white font-semibold px-6 py-3 rounded-full shadow-sm hover:bg-coral-deep transition-all duration-200 hover:scale-105 active:scale-95 inline-flex items-center gap-2;
   }
 
   .btn-outline-gold {
-    @apply border border-gold text-gold font-semibold px-6 py-3 rounded-sm hover:bg-gold hover:text-[#0A0A0A] transition-all duration-200 inline-flex items-center gap-2;
+    @apply border-2 border-coral text-coral-deep font-semibold px-6 py-3 rounded-full hover:bg-coral hover:text-white transition-all duration-200 inline-flex items-center gap-2;
   }
 
   .card-dark {
-    @apply bg-dark-card border border-dark-border rounded-sm hover:border-gold transition-all duration-300;
+    @apply bg-white border border-coral-soft rounded-2xl shadow-sm hover:border-coral hover:shadow-md transition-all duration-300;
   }
 
   .section-title {
-    @apply font-serif text-3xl md:text-4xl text-cream tracking-wide;
+    @apply font-serif text-3xl md:text-4xl text-olive tracking-wide;
   }
 
   .gold-divider {
-    @apply w-16 h-px bg-gold mx-auto my-4;
+    @apply w-16 h-px bg-coral mx-auto my-4;
+  }
+
+  .brand-script {
+    font-family: var(--font-script), 'Great Vibes', cursive;
+    color: var(--coral-deep);
   }
 }

@@ -89,7 +89,7 @@ function ProductDetail({ product, related, gradient }: {
             <div className="flex items-center gap-3 mb-4">
               <Link
                 href={`/productos?marca=${encodeURIComponent(product.brand)}`}
-                className="text-gold text-xs tracking-widest uppercase border border-gold px-3 py-1 rounded-sm hover:bg-gold hover:text-dark transition-all"
+                className="text-coral-deep text-xs tracking-widest uppercase border border-coral px-3 py-1 rounded-full hover:bg-coral hover:text-white transition-all"
               >
                 {product.brand}
               </Link>
@@ -149,7 +149,7 @@ function ProductDetail({ product, related, gradient }: {
                 className={`flex-1 py-3 px-6 font-semibold text-sm tracking-wider rounded-sm transition-all duration-200 ${
                   added
                     ? 'bg-green-600 text-white'
-                    : 'bg-gold text-dark hover:bg-gold-light hover:scale-105 active:scale-95'
+                    : 'bg-coral text-white hover:bg-coral-deep hover:scale-105 active:scale-95'
                 }`}
               >
                 {added ? '✓ Añadido al carrito' : 'Añadir al carrito'}

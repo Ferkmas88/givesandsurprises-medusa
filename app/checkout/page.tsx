@@ -101,7 +101,7 @@ export default function CheckoutPage() {
                     disabled={!isInfoComplete}
                     className={`mt-6 w-full py-3 font-semibold text-sm tracking-wider rounded-sm transition-all duration-200 ${
                       isInfoComplete
-                        ? 'bg-gold text-dark hover:bg-gold-light hover:scale-[1.02]'
+                        ? 'bg-coral text-white hover:bg-coral-deep hover:scale-[1.02]'
                         : 'bg-dark-border text-cream-muted cursor-not-allowed'
                     }`}
                   >
@@ -175,7 +175,7 @@ export default function CheckoutPage() {
                     </div>
 
                     <button
-                      className="w-full bg-gold text-dark font-bold py-3.5 rounded-sm hover:bg-gold-light transition-all duration-200 hover:scale-[1.02] text-sm tracking-wider mt-2"
+                      className="w-full bg-coral text-white font-bold py-3.5 rounded-full hover:bg-coral-deep transition-all duration-200 hover:scale-[1.02] text-sm tracking-wider mt-2"
                       onClick={() => alert('Stripe integration pending — Esta es una demostración')}
                     >
                       Pagar {formatPrice(totalPrice)}

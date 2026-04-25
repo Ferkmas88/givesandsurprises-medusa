@@ -9,7 +9,7 @@ export default function NewsletterForm() {
       <input
         type="email"
         placeholder="tu@email.com"
-        className="flex-1 bg-dark border border-dark-border text-cream placeholder-cream-muted px-4 py-3 rounded-sm focus:outline-none focus:border-gold transition-colors text-sm"
+        className="flex-1 bg-white border border-coral-soft text-olive placeholder-olive-muted px-4 py-3 rounded-full focus:outline-none focus:border-coral transition-colors text-sm"
       />
       <button type="submit" className="btn-gold whitespace-nowrap">
         Suscribirse

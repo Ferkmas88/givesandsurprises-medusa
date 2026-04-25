@@ -9,16 +9,15 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-dark/90 border-b border-dark-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-ivory/90 border-b border-coral-soft">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-gold font-serif text-xl font-bold tracking-widest">
-              G&amp;S
-            </span>
-            <span className="hidden sm:block text-cream-muted text-sm tracking-wider font-light">
-              Gives &amp; Surprises
+          {/* Brand wordmark */}
+          <Link href="/" className="flex items-center gap-1">
+            <span className="brand-script text-3xl leading-none">give</span>
+            <span className="text-coral-deep font-serif text-xl mx-1">&amp;</span>
+            <span className="text-olive font-serif text-sm tracking-[0.2em] uppercase font-semibold">
+              Surprises
             </span>
           </Link>
 
@@ -54,7 +53,7 @@ export default function Navbar() {
                   d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-gold text-dark text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-coral text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                   {totalItems > 99 ? '99+' : totalItems}
                 </span>
               )}

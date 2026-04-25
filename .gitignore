@@ -33,3 +33,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
+
+# local-only artifacts
+.playwright-mcp/
+.tmp-drive/
+home-after.png

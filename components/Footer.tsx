@@ -10,9 +10,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-gold font-serif text-2xl font-bold">G&amp;S</span>
-              <span className="text-cream-muted text-sm tracking-wider">Store</span>
+            <div className="flex items-center gap-1 mb-4">
+              <span className="brand-script text-4xl leading-none">give</span>
+              <span className="text-coral-deep font-serif text-2xl mx-1">&amp;</span>
+              <span className="text-olive font-serif text-base tracking-[0.2em] uppercase font-semibold">Surprises</span>
             </div>
             <p className="text-cream-muted text-sm leading-relaxed mb-4">
               Colección exclusiva de perfumes árabes y orientales. Fragancias únicas que cuentan historias de lujo y misterio.
@@ -67,6 +68,13 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+            </ul>
+            <h3 className="text-cream font-serif text-base mb-3 mt-6">Legal</h3>
+            <ul className="space-y-2">
+              <li><Link href="/privacy" className="text-cream-muted hover:text-gold transition-colors text-sm">Privacidad</Link></li>
+              <li><Link href="/terms" className="text-cream-muted hover:text-gold transition-colors text-sm">Términos</Link></li>
+              <li><Link href="/refund" className="text-cream-muted hover:text-gold transition-colors text-sm">Reembolsos</Link></li>
+              <li><Link href="/shipping" className="text-cream-muted hover:text-gold transition-colors text-sm">Envíos</Link></li>
             </ul>
           </div>
 

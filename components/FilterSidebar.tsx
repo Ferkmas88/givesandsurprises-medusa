@@ -37,7 +37,7 @@ export default function FilterSidebar({
               onClick={() => onCategoryChange('')}
               className={`w-full text-left px-3 py-2 rounded-sm text-sm transition-colors ${
                 selectedCategory === ''
-                  ? 'bg-gold text-dark font-semibold'
+                  ? 'bg-gold text-white font-semibold'
                   : 'text-cream-muted hover:text-gold hover:bg-dark'
               }`}
             >
@@ -49,7 +49,7 @@ export default function FilterSidebar({
                 onClick={() => onCategoryChange(cat)}
                 className={`w-full text-left px-3 py-2 rounded-sm text-sm transition-colors ${
                   selectedCategory === cat
-                    ? 'bg-gold text-dark font-semibold'
+                    ? 'bg-gold text-white font-semibold'
                     : 'text-cream-muted hover:text-gold hover:bg-dark'
                 }`}
               >

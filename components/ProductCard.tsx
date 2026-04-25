@@ -52,7 +52,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
           {/* Brand badge */}
           <div className="absolute top-2 left-2">
-            <span className="bg-dark/80 backdrop-blur-sm text-gold text-xs px-2 py-1 rounded-sm tracking-wider">
+            <span className="bg-white/90 backdrop-blur-sm text-coral-deep text-xs px-2 py-1 rounded-full tracking-wider shadow-sm">
               {product.brand}
             </span>
           </div>
@@ -72,7 +72,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               className={`text-xs font-semibold px-3 py-2 rounded-sm transition-all duration-200 ${
                 added
                   ? 'bg-green-600 text-white scale-95'
-                  : 'bg-gold text-dark hover:bg-gold-light hover:scale-105 active:scale-95'
+                  : 'bg-coral text-white hover:bg-coral-deep hover:scale-105 active:scale-95'
               }`}
             >
               {added ? '✓ Añadido' : '+ Carrito'}
