@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { useCart } from '@/context/CartContext'
 
@@ -9,33 +10,36 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-ivory/90 border-b border-coral-soft">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-cream/95 border-b border-rose-mist">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Brand wordmark */}
-          <Link href="/" className="flex items-center gap-1">
-            <span className="brand-script text-3xl leading-none">give</span>
-            <span className="text-coral-deep font-serif text-xl mx-1">&amp;</span>
-            <span className="text-olive font-serif text-sm tracking-[0.2em] uppercase font-semibold">
-              Surprises
-            </span>
+          {/* Brand logo */}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/brand/logo-pink-clean.png"
+              alt="Gives & Surprises"
+              width={140}
+              height={56}
+              priority
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-cream-muted hover:text-gold transition-colors text-sm tracking-wider uppercase">
+            <Link href="/" className="text-navy hover:text-rose transition-colors text-sm tracking-wider uppercase">
               Inicio
             </Link>
-            <Link href="/productos" className="text-cream-muted hover:text-gold transition-colors text-sm tracking-wider uppercase">
+            <Link href="/productos" className="text-navy hover:text-rose transition-colors text-sm tracking-wider uppercase">
               Productos
             </Link>
-            <Link href="/productos?categoria=Para+Él" className="text-cream-muted hover:text-gold transition-colors text-sm tracking-wider uppercase">
+            <Link href="/productos?categoria=Para+Él" className="text-navy hover:text-rose transition-colors text-sm tracking-wider uppercase">
               Para Él
             </Link>
-            <Link href="/productos?categoria=Para+Ella" className="text-cream-muted hover:text-gold transition-colors text-sm tracking-wider uppercase">
+            <Link href="/productos?categoria=Para+Ella" className="text-navy hover:text-rose transition-colors text-sm tracking-wider uppercase">
               Para Ella
             </Link>
-            <Link href="/productos?categoria=Unisex" className="text-cream-muted hover:text-gold transition-colors text-sm tracking-wider uppercase">
+            <Link href="/productos?categoria=Unisex" className="text-navy hover:text-rose transition-colors text-sm tracking-wider uppercase">
               Unisex
             </Link>
           </div>
@@ -45,7 +49,7 @@ export default function Navbar() {
             {/* Cart */}
             <button
               onClick={openDrawer}
-              className="relative p-2 text-cream-muted hover:text-gold transition-colors"
+              className="relative p-2 text-navy hover:text-rose transition-colors"
               aria-label="Carrito de compras"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,7 +57,7 @@ export default function Navbar() {
                   d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-coral text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-rose text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                   {totalItems > 99 ? '99+' : totalItems}
                 </span>
               )}
@@ -62,7 +66,7 @@ export default function Navbar() {
             {/* Mobile menu toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden p-2 text-cream-muted hover:text-gold transition-colors"
+              className="md:hidden p-2 text-navy hover:text-rose transition-colors"
               aria-label="Menú"
             >
               {menuOpen ? (
@@ -80,7 +84,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden border-t border-dark-border py-4 space-y-3">
+          <div className="md:hidden border-t border-rose-mist py-4 space-y-3">
             {[
               { href: '/', label: 'Inicio' },
               { href: '/productos', label: 'Todos los productos' },
@@ -93,7 +97,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="block px-2 py-2 text-cream-muted hover:text-gold transition-colors text-sm tracking-wider uppercase"
+                className="block px-2 py-2 text-navy hover:text-rose transition-colors text-sm tracking-wider uppercase"
               >
                 {link.label}
               </Link>

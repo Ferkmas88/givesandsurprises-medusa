@@ -1,29 +1,9 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter, Great_Vibes } from 'next/font/google'
 import './globals.css'
 import { CartProvider } from '@/context/CartContext'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CartDrawer from '@/components/CartDrawer'
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-const greatVibes = Great_Vibes({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-script',
-  display: 'swap',
-})
 
 export const metadata: Metadata = {
   title: 'Gives & Surprises Store | Perfumes Orientales',
@@ -42,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`${playfair.variable} ${inter.variable} ${greatVibes.variable}`}>
-      <body className="bg-ivory text-olive antialiased">
+    <html lang="es">
+      <body className="bg-cream text-navy-deep antialiased">
         <CartProvider>
           <Navbar />
           <CartDrawer />

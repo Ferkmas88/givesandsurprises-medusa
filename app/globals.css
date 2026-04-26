@@ -2,85 +2,131 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --coral: #E8919A;
-  --coral-soft: #F5C8C8;
-  --coral-deep: #D46A75;
-  --olive: #3F5E3F;
-  --olive-muted: #7A8A7A;
-  --ivory: #FAF3EA;
-  --ivory-card: #FFFFFF;
-  --rose-border: #F2D6D6;
+/* Brand fonts — local files in /public/fonts */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Quincho Script';
+  src: url('/fonts/QuinchoScript_PersonalUse.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-  /* aliases kept so legacy class tokens map to new palette */
-  --gold: #E8919A;
-  --gold-light: #F5C8C8;
-  --gold-dark: #3F5E3F;
-  --cream: #3F5E3F;
-  --cream-muted: #7A8A7A;
+:root {
+  /* Official brand palette */
+  --rose: #D17278;
+  --rose-soft: #E8B7BB;
+  --rose-mist: #F5DCDF;
+  --rose-deep: #B85962;
+  --navy: #3F607A;
+  --navy-soft: #7D96AB;
+  --navy-mist: #D8DFE7;
+  --navy-deep: #2C4A60;
+  --cream: #FAF3EA;
+  --cream-warm: #F5E9DC;
+  --sage: #C9D2C8;
+
+  /* Legacy aliases */
+  --coral: #D17278;
+  --coral-soft: #E8B7BB;
+  --coral-deep: #B85962;
+  --olive: #3F607A;
+  --olive-muted: #7D96AB;
+  --ivory: #FAF3EA;
+  --gold: #D17278;
+  --gold-light: #E8B7BB;
+  --gold-dark: #3F607A;
   --dark: #FAF3EA;
   --dark-card: #FFFFFF;
-  --dark-border: #F2D6D6;
+  --dark-border: #F5DCDF;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--ivory);
-  color: var(--olive);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  background-color: var(--cream);
+  color: var(--navy-deep);
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair), Georgia, serif;
-  color: var(--olive);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--navy);
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--ivory);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--coral);
-  border-radius: 3px;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 3px; }
 
-::selection {
-  background: var(--coral);
-  color: #FFFFFF;
-}
+::selection { background: var(--rose); color: #FFFFFF; }
 
 @layer components {
   .btn-gold {
-    @apply bg-coral text-white font-semibold px-6 py-3 rounded-full shadow-sm hover:bg-coral-deep transition-all duration-200 hover:scale-105 active:scale-95 inline-flex items-center gap-2;
+    @apply bg-rose text-white font-bold px-6 py-3 rounded-full shadow-sm hover:bg-rose-deep transition-all duration-200 hover:scale-105 active:scale-95 inline-flex items-center gap-2 uppercase tracking-wider text-sm;
   }
 
   .btn-outline-gold {
-    @apply border-2 border-coral text-coral-deep font-semibold px-6 py-3 rounded-full hover:bg-coral hover:text-white transition-all duration-200 inline-flex items-center gap-2;
+    @apply border-2 border-navy text-navy font-bold px-6 py-3 rounded-full hover:bg-navy hover:text-white transition-all duration-200 inline-flex items-center gap-2 uppercase tracking-wider text-sm;
+  }
+
+  .btn-navy {
+    @apply bg-navy text-white font-bold px-6 py-3 rounded-full shadow-sm hover:bg-navy-deep transition-all duration-200 hover:scale-105 active:scale-95 inline-flex items-center gap-2 uppercase tracking-wider text-sm;
   }
 
   .card-dark {
-    @apply bg-white border border-coral-soft rounded-2xl shadow-sm hover:border-coral hover:shadow-md transition-all duration-300;
+    @apply bg-white border border-rose-mist rounded-2xl shadow-sm hover:border-rose hover:shadow-md transition-all duration-300;
   }
 
   .section-title {
-    @apply font-serif text-3xl md:text-4xl text-olive tracking-wide;
+    @apply text-3xl md:text-4xl text-navy font-bold tracking-wide;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .gold-divider {
-    @apply w-16 h-px bg-coral mx-auto my-4;
+    @apply w-16 h-px bg-rose mx-auto my-4;
   }
 
   .brand-script {
-    font-family: var(--font-script), 'Great Vibes', cursive;
-    color: var(--coral-deep);
+    font-family: 'Quincho Script', cursive;
+    color: var(--rose);
   }
+
+  .text-gold { color: var(--rose); }
+  .text-cream { color: var(--navy-deep); }
+  .text-cream-muted { color: var(--navy-soft); }
+  .bg-gold { background-color: var(--rose); }
+  .bg-dark { background-color: var(--cream); }
+  .bg-dark-card { background-color: #FFFFFF; }
+  .border-gold { border-color: var(--rose); }
+  .border-dark-border { border-color: var(--rose-mist); }
 }

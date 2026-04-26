@@ -8,38 +8,58 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gold: {
-          DEFAULT: '#E8919A',
-          light: '#F5C8C8',
-          dark: '#3F5E3F',
+        // Brand palette per official client manual
+        rose: {
+          DEFAULT: '#D17278',   // primary brand rose (rgb 209,114,120)
+          soft: '#E8B7BB',      // pastel pink for backgrounds
+          mist: '#F5DCDF',      // very soft pink wash
+          deep: '#B85962',      // darker rose hover
+        },
+        navy: {
+          DEFAULT: '#3F607A',   // brand navy blue (rgb 63,96,122)
+          soft: '#7D96AB',      // muted navy
+          mist: '#D8DFE7',      // pale blue-grey
+          deep: '#2C4A60',      // darker navy
         },
         cream: {
-          DEFAULT: '#3F5E3F',
-          muted: '#7A8A7A',
-        },
-        dark: {
-          DEFAULT: '#FAF3EA',
+          DEFAULT: '#FAF3EA',   // ivory/cream background
+          warm: '#F5E9DC',      // warm cream
           card: '#FFFFFF',
-          border: '#F2D6D6',
+        },
+        sage: {
+          DEFAULT: '#C9D2C8',   // pale sage-grey from manual confetti
+          mist: '#E4E8E2',
+        },
+
+        // Legacy aliases — keep existing classes working
+        gold: {
+          DEFAULT: '#D17278',
+          light: '#E8B7BB',
+          dark: '#3F607A',
         },
         coral: {
-          DEFAULT: '#E8919A',
-          soft: '#F5C8C8',
-          deep: '#D46A75',
+          DEFAULT: '#D17278',
+          soft: '#E8B7BB',
+          deep: '#B85962',
         },
         olive: {
-          DEFAULT: '#3F5E3F',
-          muted: '#7A8A7A',
+          DEFAULT: '#3F607A',
+          muted: '#7D96AB',
         },
         ivory: {
           DEFAULT: '#FAF3EA',
           card: '#FFFFFF',
         },
+        dark: {
+          DEFAULT: '#FAF3EA',
+          card: '#FFFFFF',
+          border: '#F5DCDF',
+        },
       },
       fontFamily: {
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        script: ['var(--font-script)', 'cursive'],
+        sans: ['Montserrat', 'system-ui', 'sans-serif'],
+        serif: ['Montserrat', 'Georgia', 'serif'],
+        script: ['"Quincho Script"', 'cursive'],
       },
     },
   },
