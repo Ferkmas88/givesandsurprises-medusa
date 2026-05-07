@@ -16,12 +16,12 @@ export default function Navbar() {
           {/* Brand logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/brand/logo-pink-clean.png"
+              src="/brand/logo-full.png"
               alt="Gives & Surprises"
-              width={140}
-              height={56}
+              width={180}
+              height={110}
               priority
-              className="h-10 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
 

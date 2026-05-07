@@ -31,12 +31,12 @@ export default function Hero() {
         {/* Brand logo */}
         <div className="flex justify-center mb-8">
           <Image
-            src="/brand/logo-pink-clean.png"
+            src="/brand/logo-full.png"
             alt="Gives & Surprises"
-            width={420}
-            height={260}
+            width={520}
+            height={320}
             priority
-            className="w-full max-w-md h-auto"
+            className="w-full max-w-lg h-auto"
           />
         </div>
 
